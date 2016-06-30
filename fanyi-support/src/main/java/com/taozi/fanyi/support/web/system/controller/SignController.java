@@ -13,7 +13,7 @@ public class SignController extends Controller {
 		String password = getPara("password");
 		if(email.equals("a@a.com") && password.equals("111111")) {
 			//forward to admin action
-			renderJsp("admin.jsp");
+			redirect("/admin");
 		} else {
 			//forwardAction("/toSignIn");
 			redirect("/toSignIn", false);
