@@ -26,7 +26,7 @@ public class Config extends JFinalConfig {
 	@Override
 	public void configRoute(Routes me) {
 		me.add(new FrontRoutes());
-		me.add(new AdminRoutes());
+		me.add(new BackendRoutes());
 	}
 
 	@Override
