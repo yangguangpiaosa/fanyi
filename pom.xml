@@ -38,6 +38,10 @@
     <module>fanyi-log</module>
     <module>fanyi-support</module>
     <module>fanyi-model</module>
+    <module>fanyi-www</module>
+    <module>fanyi-home</module>
+    <module>fanyi-profile</module>
+    <module>fanyi-admin</module>
   </modules>
 
   <dependencyManagement>

@@ -16,6 +16,18 @@
         <dependent-module archiveName="fanyi-log-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/fanyi-log/fanyi-log">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="fanyi-www-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/fanyi-www/fanyi-www">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="fanyi-home-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/fanyi-home/fanyi-home">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="fanyi-profile-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/fanyi-profile/fanyi-profile">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="fanyi-admin-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/fanyi-admin/fanyi-admin">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="java-output-path" value="/fanyi-matrix/target/classes"/>
         <property name="context-root" value="matrix"/>
     </wb-module>

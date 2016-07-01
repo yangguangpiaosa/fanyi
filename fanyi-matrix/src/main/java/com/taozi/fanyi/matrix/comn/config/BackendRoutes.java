@@ -1,19 +1,26 @@
 package com.taozi.fanyi.matrix.comn.config;
 
 import com.jfinal.config.Routes;
+import com.taozi.fanyi.admin.AdminRoutes;
+import com.taozi.fanyi.home.HomeRoutes;
 import com.taozi.fanyi.log.LogRoutes;
+import com.taozi.fanyi.profile.ProfileRoutes;
 import com.taozi.fanyi.support.web.comn.SupportRoutes;
-import com.taozi.fanyi.support.web.system.controller.InitController;
 
-public class AdminRoutes extends Routes {
+public class BackendRoutes extends Routes {
 
 	@Override
 	public void config() {
-		add("/", InitController.class);
 		
 		add(new SupportRoutes());
 		
 		add(new LogRoutes());
+		
+		add(new HomeRoutes());
+		
+		add(new ProfileRoutes());
+		
+		add(new AdminRoutes());
 	}
 	
 }
