@@ -71,6 +71,7 @@
   		<div class="ui teal button">确定</div>
   		<div class="ui button">取消</div>
   	</div>
+  	<div class="ui fluid red button">button</div>
     <p>a</p>
   </div>
   <div class="column">
