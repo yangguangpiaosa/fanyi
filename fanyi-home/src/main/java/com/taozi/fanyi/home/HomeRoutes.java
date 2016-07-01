@@ -7,7 +7,7 @@ public class HomeRoutes extends Routes {
 
 	@Override
 	public void config() {
-		add("/home", HomeController.class, "/system");
+		add("/home", HomeController.class);
 	}
 
 }
