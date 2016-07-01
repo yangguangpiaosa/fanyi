@@ -38,6 +38,7 @@
     <module>fanyi-log</module>
     <module>fanyi-support</module>
     <module>fanyi-model</module>
+    <module>fanyi-www</module>
   </modules>
 
   <dependencyManagement>

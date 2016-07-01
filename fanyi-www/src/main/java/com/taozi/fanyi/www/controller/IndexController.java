@@ -1,8 +1,8 @@
-package com.taozi.fanyi.support.web.system.controller;
+package com.taozi.fanyi.www.controller;
 
 import com.jfinal.core.Controller;
 
-public class InitController extends Controller {
+public class IndexController extends Controller {
 	
 	public void index() {
 		//renderJsp("index.jsp");

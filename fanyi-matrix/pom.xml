@@ -65,6 +65,11 @@
 		<artifactId>fanyi-log</artifactId>
 		<version>${project.version}</version>
 	</dependency>
+	<dependency>
+		<groupId>com.taozi.fanyi</groupId>
+		<artifactId>fanyi-www</artifactId>
+		<version>${project.version}</version>
+	</dependency>
 	
   </dependencies>
   <build>
