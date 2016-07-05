@@ -24,6 +24,7 @@
   <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/js/comn/semantic-ui/components/button.css">
   
   <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/js/comn/semantic-ui/components/dropdown.css">
+  <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/js/comn/semantic-ui/components/step.css">
 
   <script src="<%=request.getContextPath() %>/js/comn/sea.js"></script>
   <script src="<%=request.getContextPath() %>/js/comn/config.js"></script>
@@ -71,7 +72,6 @@
   		<div class="ui teal button">确定</div>
   		<div class="ui button">取消</div>
   	</div>
-  	<div class="ui fluid red button">button</div>
     <p>a</p>
   </div>
   <div class="column">
@@ -86,6 +86,32 @@
     <div class="ui fluid blue button">button</div>
     <p>d</p>
   </div>
+</div>
+
+<div class="ui four column grid container">
+<div class="column">
+<div class="ui fluid blue button">button</div>
+</div>
+<div class="ui ordered steps" style="padding: 0px;">
+  <div class="completed step">
+    <div class="content">
+      <div class="title">Shipping</div>
+      <div class="description">Choose your shipping options</div>
+    </div>
+  </div>
+  <div class="completed step">
+    <div class="content">
+      <div class="title">Billing</div>
+      <div class="description">Enter billing information</div>
+    </div>
+  </div>
+  <div class="active step">
+    <div class="content">
+      <div class="title">Confirm Order</div>
+      <div class="description">Verify order details</div>
+    </div>
+  </div>
+</div>
 </div>
 
 </body>
