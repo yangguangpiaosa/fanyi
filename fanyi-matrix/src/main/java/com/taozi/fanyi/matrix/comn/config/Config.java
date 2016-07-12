@@ -10,6 +10,7 @@ import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
+import com.taozi.fanyi.support.web.comn.handler.StaticHandler;
 import com.taozi.fanyi.support.web.comn.interceptor.GlobalInterceptor;
 import com.taozi.fanyi.support.web.comn.interceptor.LogInterceptor;
 
@@ -48,7 +49,7 @@ public class Config extends JFinalConfig {
 
 	@Override
 	public void configHandler(Handlers me) {
-		
+		me.add(new StaticHandler());
 	}
 	
 	@Override
