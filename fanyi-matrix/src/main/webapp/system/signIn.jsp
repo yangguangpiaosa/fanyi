@@ -1,3 +1,5 @@
+<%@ page pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +20,6 @@
   <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/js/comn/semantic-ui/components/menu.css">
 
   <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/js/comn/semantic-ui/components/divider.css">
-  <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/js/comn/semantic-ui/components/segment.css">
   <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/js/comn/semantic-ui/components/form.css">
   <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/js/comn/semantic-ui/components/input.css">
   <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/js/comn/semantic-ui/components/button.css">
@@ -34,7 +35,7 @@
 
   <style type="text/css">
     body {
-      background-color: #DADADA;
+      //background-color: #DADADA;
     }
     body > .grid {
       height: 100%;
@@ -51,14 +52,11 @@
 
 <div class="ui middle aligned center aligned grid">
   <div class="column">
-    <h2 class="ui teal image header">
-      <img src="<%=request.getContextPath() %>/img/logo.png" class="image">
-      <div class="content">
-        Log-in to your account
-      </div>
+    <h2 class="ui teal header">登录
+      <%-- <img src="<%=request.getContextPath() %>/img/logo.png" class="image"/>
+      <div class="content">登录</div> --%>
     </h2>
     <form class="ui large form" action="<%=request.getContextPath() %>/sign/signIn" method="POST">
-      <div class="ui stacked segment">
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
@@ -71,16 +69,19 @@
             <input type="password" name="password" placeholder="Password">
           </div>
         </div>
-        <div id="signIn" class="ui fluid large teal submit button">Sign In</div>
-      </div>
-
-      <div class="ui error message"></div>
+        <!-- <div id="signIn" class="ui fluid large teal submit button">Sign In</div> -->
+        <div class="ui two column doubling stackable grid container">
+		  <div class="column">
+		  	<div id="signIn" class="ui fluid large teal submit button">登录</div>
+		  </div>
+		  <div class="column">
+		    <div class="ui fluid large gray button">注册</div>
+		  </div>
+		</div>
+        <div class="ui error message"></div>
 
     </form>
 
-    <div class="ui message">
-      New to us? <a href="#">Sign Up</a>
-    </div>
   </div>
 </div>
 
