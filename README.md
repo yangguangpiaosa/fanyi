@@ -22,3 +22,4 @@ Taozi fanyi.
 * [JFinal](https://github.com/jfinal/jfinal)
 * [Semantic-UI](https://github.com/Semantic-Org/Semantic-UI)
 * [seajs](https://github.com/seajs/seajs)
+* [druid](https://github.com/alibaba/druid)

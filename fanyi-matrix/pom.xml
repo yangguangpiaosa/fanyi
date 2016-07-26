@@ -41,18 +41,18 @@
 	</dependency>
 	
 	<!-- HSQLDB -->
-	<dependency>
+	<!-- <dependency>
 	    <groupId>org.hsqldb</groupId>
 	    <artifactId>hsqldb</artifactId>
 	    <version>2.3.2</version>
-	</dependency>
+	</dependency> -->
 	
 	<!-- C3p0 -->
-	<dependency>
+	<!-- <dependency>
 		<groupId>c3p0</groupId>
 		<artifactId>c3p0</artifactId>
 		<version>0.9.1.2</version>
-	</dependency>
+	</dependency> -->
 	
 	<!-- fanyi -->
 	<dependency>

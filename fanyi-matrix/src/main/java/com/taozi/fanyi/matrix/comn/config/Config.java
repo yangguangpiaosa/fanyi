@@ -2,6 +2,8 @@ package com.taozi.fanyi.matrix.comn.config;
 
 import org.apache.log4j.Logger;
 
+import com.alibaba.druid.filter.stat.StatFilter;
+import com.alibaba.druid.wall.WallFilter;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
 import com.jfinal.config.Interceptors;
@@ -9,7 +11,11 @@ import com.jfinal.config.JFinalConfig;
 import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.kit.PropKit;
+import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
+import com.jfinal.plugin.druid.DruidPlugin;
+import com.jfinal.plugin.druid.DruidStatViewHandler;
+import com.taozi.fanyi.model.models._MappingKit;
 import com.taozi.fanyi.support.web.comn.handler.StaticHandler;
 import com.taozi.fanyi.support.web.comn.interceptor.GlobalInterceptor;
 import com.taozi.fanyi.support.web.comn.interceptor.LogInterceptor;
@@ -39,6 +45,20 @@ public class Config extends JFinalConfig {
 		arp.setDialect(new AnsiSqlDialect());
 		_MappingKit.mapping(arp);
 		me.add(arp);*/
+		
+		// DruidPlugin
+		DruidPlugin dp = new DruidPlugin(PropKit.get("db.url"), PropKit.get("db.username"), PropKit.get("db.password").trim(), PropKit.get("db.driver"));
+		dp.addFilter(new StatFilter());
+		WallFilter wall = new WallFilter();
+		wall.setDbType("mysql");
+		dp.addFilter(wall);
+		me.add(dp);
+		
+		// ActiveRecordPlugin
+		ActiveRecordPlugin arp = new ActiveRecordPlugin(dp);
+		arp.setShowSql(true);
+		_MappingKit.mapping(arp);
+		me.add(arp);
 	}
 
 	@Override
@@ -50,6 +70,8 @@ public class Config extends JFinalConfig {
 	@Override
 	public void configHandler(Handlers me) {
 		me.add(new StaticHandler());
+		//Druid Monitor
+		me.add(new DruidStatViewHandler("/druid"));
 	}
 	
 	@Override
