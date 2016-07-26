@@ -1,5 +1,7 @@
 package com.taozi.fanyi.matrix.comn.config;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.log4j.Logger;
 
 import com.alibaba.druid.filter.stat.StatFilter;
@@ -15,6 +17,7 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.plugin.druid.DruidStatViewHandler;
+import com.jfinal.plugin.druid.IDruidStatViewAuth;
 import com.taozi.fanyi.model.models._MappingKit;
 import com.taozi.fanyi.support.web.comn.handler.StaticHandler;
 import com.taozi.fanyi.support.web.comn.interceptor.GlobalInterceptor;
@@ -71,7 +74,21 @@ public class Config extends JFinalConfig {
 	public void configHandler(Handlers me) {
 		me.add(new StaticHandler());
 		//Druid Monitor
-		me.add(new DruidStatViewHandler("/druid"));
+		DruidStatViewHandler dvh = new DruidStatViewHandler("/druid", new IDruidStatViewAuth() {
+
+			@Override
+			public boolean isPermitted(HttpServletRequest request) {
+				// 这里只是简单的判断访问者是否登录，还可以做更加细致的权限控制
+				/*User user=(User) request.getSession().getAttribute("user");
+				if(user == null) {
+					return false;
+				}
+				return "admin".equals(user.getStr("uname"));*/
+				return true;
+			}
+			
+		});
+		me.add(dvh);
 	}
 	
 	@Override
