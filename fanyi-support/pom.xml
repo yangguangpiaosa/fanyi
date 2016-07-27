@@ -20,12 +20,6 @@
   </properties>
   
   <dependencies>
-  
-    <!-- log4j and slf4j -->
-    <dependency>
-		<groupId>log4j</groupId>
-		<artifactId>log4j</artifactId>
-	</dependency>
 	
     <!-- junit -->
 	<dependency>
@@ -40,26 +34,24 @@
 		<artifactId>tomcat-jsp-api</artifactId>
 	</dependency>
 	
-	<!-- jFinal -->
-	<dependency>
-	    <groupId>com.jfinal</groupId>
-	    <artifactId>jfinal</artifactId>
-	    <version>2.2</version>
-	</dependency>
-	
 	<!-- Velocity -->
 	<dependency>
 	    <groupId>org.apache.velocity</groupId>
 	    <artifactId>velocity</artifactId>
 	    <version>1.7</version>
+	    <exclusions>
+	    	<exclusion>
+	    		<groupId>commons-collections</groupId>
+      			<artifactId>commons-collections</artifactId>
+	    	</exclusion>
+	    	<exclusion>
+	    		<groupId>commons-lang</groupId>
+      			<artifactId>commons-lang</artifactId>
+	    	</exclusion>
+	    </exclusions>
 	</dependency>
 	
 	<!-- fanyi -->
-	<dependency>
-		<groupId>com.taozi.fanyi</groupId>
-		<artifactId>fanyi-utils</artifactId>
-		<version>${project.version}</version>
-	</dependency>
 	<dependency>
 		<groupId>com.taozi.fanyi</groupId>
 		<artifactId>fanyi-model</artifactId>

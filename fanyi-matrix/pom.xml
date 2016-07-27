@@ -20,12 +20,6 @@
   </properties>
   
   <dependencies>
-  
-  	<!-- log4j and slf4j -->
-    <dependency>
-		<groupId>log4j</groupId>
-		<artifactId>log4j</artifactId>
-	</dependency>
 	
     <!-- junit -->
 	<dependency>
