@@ -25,6 +25,22 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 		return get("email");
 	}
 
+	public void setUserName(java.lang.String userName) {
+		set("user_name", userName);
+	}
+
+	public java.lang.String getUserName() {
+		return get("user_name");
+	}
+
+	public void setUserPass(java.lang.String userPass) {
+		set("user_pass", userPass);
+	}
+
+	public java.lang.String getUserPass() {
+		return get("user_pass");
+	}
+
 	public void setUserType(java.lang.String userType) {
 		set("user_type", userType);
 	}

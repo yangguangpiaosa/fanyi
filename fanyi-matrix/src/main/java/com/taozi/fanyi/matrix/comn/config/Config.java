@@ -2,8 +2,6 @@ package com.taozi.fanyi.matrix.comn.config;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.log4j.Logger;
-
 import com.alibaba.druid.filter.stat.StatFilter;
 import com.alibaba.druid.wall.WallFilter;
 import com.jfinal.config.Constants;
@@ -13,6 +11,7 @@ import com.jfinal.config.JFinalConfig;
 import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.kit.PropKit;
+import com.jfinal.log.Log;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.plugin.druid.DruidPlugin;
@@ -25,7 +24,7 @@ import com.taozi.fanyi.support.web.comn.interceptor.LogInterceptor;
 
 public class Config extends JFinalConfig {
 	
-	private static final Logger logger = Logger.getLogger(JFinalConfig.class);
+	private static final Log log = Log.getLog(JFinalConfig.class);
 
 	@Override
 	public void configConstant(Constants me) {
@@ -94,13 +93,13 @@ public class Config extends JFinalConfig {
 	@Override
 	public void afterJFinalStart() {
 		super.afterJFinalStart();
-		logger.info("================== SYSTEM STARTED ==================");
+		log.info("================== SYSTEM STARTED ==================");
 	}
 
 	@Override
 	public void beforeJFinalStop() {
 		super.beforeJFinalStop();
-		logger.info("================== SYSTEM STOPPED ==================");
+		log.info("================== SYSTEM STOPPED ==================");
 	}
 
 	public static C3p0Plugin createC3p0Plugin() {
