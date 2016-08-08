@@ -4,6 +4,7 @@ import com.jfinal.core.Controller;
 import com.jfinal.log.Log;
 import com.jfinal.plugin.activerecord.Db;
 import com.taozi.fanyi.model.models.User;
+import com.taozi.fanyi.support.web.comn.Constants;
 import com.taozi.fanyi.utils.encrypt.Encryptor;
 
 public class SignController extends Controller {
@@ -21,8 +22,8 @@ public class SignController extends Controller {
 		User user = User.dao.findFirst("select * from user where email = ? and user_pass = ?", email, Encryptor.base64AfterMd5(password));
 		if(count == 1 && null != user) {
 			log.info(user.getUserName() + " - " + user.getEmail());
-			setSessionAttr("USER", user);
-			log.info(getSessionAttr("USER").toString());
+			setSessionAttr(Constants.SESSION_USER, user);
+			log.info(getSessionAttr(Constants.SESSION_USER).toString());
 			//forward to admin action
 			redirect("/home");
 		} else {
