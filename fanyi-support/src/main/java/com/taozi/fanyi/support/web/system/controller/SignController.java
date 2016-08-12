@@ -1,5 +1,7 @@
 package com.taozi.fanyi.support.web.system.controller;
 
+import javax.servlet.http.HttpSession;
+
 import com.jfinal.core.Controller;
 import com.jfinal.log.Log;
 import com.jfinal.plugin.activerecord.Db;
@@ -23,6 +25,8 @@ public class SignController extends Controller {
 		if(count == 1 && null != user) {
 			log.info(user.getUserName() + " - " + user.getEmail());
 			setSessionAttr(Constants.SESSION_USER, user);
+			HttpSession session = this.getSession();
+			session.setMaxInactiveInterval(Constants.SESSION_TIME_OUT);
 			log.info(getSessionAttr(Constants.SESSION_USER).toString());
 			//forward to admin action
 			redirect("/home");
@@ -30,6 +34,11 @@ public class SignController extends Controller {
 			//forwardAction("/toSignIn");
 			redirect("/toSignIn", false);
 		}
+	}
+	
+	public void signOut() {
+		removeSessionAttr(Constants.SESSION_USER);
+		redirect("index.html");
 	}
 	
 }

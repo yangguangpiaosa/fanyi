@@ -61,7 +61,7 @@
 			  <button class="ui icon button">
 			    <i class="search icon"></i>
 			  </button>
-			</div>
+		  </div>
 	    </div>
 	</div>
 </div>
