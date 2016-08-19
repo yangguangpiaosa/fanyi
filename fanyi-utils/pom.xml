@@ -56,6 +56,13 @@
 		<artifactId>commons-codec</artifactId>
 		<version>1.10</version>
 	</dependency>
+	
+	<!-- For file operations -->
+	<dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>2.5</version>
+	</dependency>
     
   </dependencies>
   

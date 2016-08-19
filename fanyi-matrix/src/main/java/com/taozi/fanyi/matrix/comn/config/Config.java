@@ -13,6 +13,7 @@ import com.jfinal.config.Routes;
 import com.jfinal.kit.PropKit;
 import com.jfinal.log.Log;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
+import com.jfinal.plugin.activerecord.dialect.MysqlDialect;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.plugin.druid.DruidStatViewHandler;
@@ -21,6 +22,7 @@ import com.taozi.fanyi.model.models._MappingKit;
 import com.taozi.fanyi.support.web.comn.handler.StaticHandler;
 import com.taozi.fanyi.support.web.comn.interceptor.GlobalInterceptor;
 import com.taozi.fanyi.support.web.comn.interceptor.LogInterceptor;
+import com.taozi.fanyi.support.web.comn.plugin.quartz.QuartzPlugin;
 
 public class Config extends JFinalConfig {
 	
@@ -59,8 +61,13 @@ public class Config extends JFinalConfig {
 		// ActiveRecordPlugin
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(dp);
 		arp.setShowSql(true);
+		arp.setDialect(new MysqlDialect());
 		_MappingKit.mapping(arp);
 		me.add(arp);
+		
+		// QuartzPlugin
+		QuartzPlugin qp = new QuartzPlugin();
+		me.add(qp);
 	}
 
 	@Override
