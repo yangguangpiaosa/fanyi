@@ -1,0 +1,11 @@
+Table: user
+-----------+-------------+------+-----+---------+---------
+ Field     | Type        | Null | Key | Default | Remarks 
+-----------+-------------+------+-----+---------+---------
+ id        | INT(10)     | NO   | PRI |         |         
+ email     | VARCHAR(30) | YES  |     |         |         
+ user_name | VARCHAR(30) | YES  |     |         |         
+ user_pass | VARCHAR(50) | YES  |     |         |         
+ user_type | CHAR(2)     | YES  |     |         |         
+-----------+-------------+------+-----+---------+---------
+

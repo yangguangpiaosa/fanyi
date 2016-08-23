@@ -7,10 +7,10 @@
         <dependent-module archiveName="fanyi-support-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/fanyi-support/fanyi-support">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="fanyi-utils-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/fanyi-utils/fanyi-utils">
+        <dependent-module archiveName="fanyi-model-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/fanyi-model/fanyi-model">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="fanyi-model-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/fanyi-model/fanyi-model">
+        <dependent-module archiveName="fanyi-utils-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/fanyi-utils/fanyi-utils">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="fanyi-log-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/fanyi-log/fanyi-log">

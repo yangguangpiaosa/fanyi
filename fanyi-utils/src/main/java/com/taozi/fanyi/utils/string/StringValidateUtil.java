@@ -1,5 +1,7 @@
 package com.taozi.fanyi.utils.string;
 
+import org.apache.commons.lang.StringUtils;
+
 
 public class StringValidateUtil {
 	
@@ -20,7 +22,8 @@ public class StringValidateUtil {
 	 * @return
 	 */
 	public StringValidateUtil notNull() {
-		this.passed &= (null != this.base && !"".equals(this.base));
+		this.passed &= (StringUtils.isNotEmpty(StringUtils.trim(this.base)) 
+							&& StringUtils.isNotBlank(StringUtils.trim(this.base)));//(null != this.base && !"".equals(this.base));
 		return this;
 	}
 	
@@ -107,12 +110,13 @@ public class StringValidateUtil {
 	}
 	
 	public static void main(String[] args) {
+		System.out.println(new StringValidateUtil("	 ").notNull().isPassed());
 		System.out.println(new StringValidateUtil("10").minLength(1).isPassed());
 		System.out.println(new StringValidateUtil("10").maxLength(7).isPassed());
 		System.out.println(new StringValidateUtil("10").typeInt().isPassed());
 		System.out.println(new StringValidateUtil("10").typeNumbers().isPassed());
 		System.out.println(new StringValidateUtil("ab@bc.com").typeEmail().isPassed());
-		System.out.println(new StringValidateUtil(",test@cn.ibm.com,ab@bc.com").typeEmails().isPassed());
+		System.out.println(new StringValidateUtil("test@cn.ibm.com,ab@bc.com").typeEmails().isPassed());
 	}
 	
 }

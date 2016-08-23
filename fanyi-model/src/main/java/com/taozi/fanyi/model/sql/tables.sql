@@ -1,0 +1,2 @@
+create table user(id int primary key, email varchar(30), user_name varchar(30), user_pass varchar(50), user_type char(2));
+insert into user values(1, 'admin@admin.com', 'admin', 'MjEyMzJmMjk3YTU3YTVhNzQzODk0YTBlNGE4MDFmYzM=', 'N');

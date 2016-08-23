@@ -27,11 +27,52 @@
 		<artifactId>log4j</artifactId>
 	</dependency>
 	
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-api</artifactId>
+	    <version>1.7.21</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-log4j12</artifactId>
+	    <version>1.7.21</version>
+	</dependency>
+	
     <!-- junit -->
 	<dependency>
 		<groupId>junit</groupId>
 		<artifactId>junit</artifactId>
 		<scope>test</scope>
+	</dependency>
+	
+	<!-- Commons -->
+	<!-- For Velocity -->
+	<dependency>
+		<groupId>commons-collections</groupId>
+		<artifactId>commons-collections</artifactId>
+		<version>3.2.2</version><!-- updated to 3.2.2, Velocity 1.7 is using 3.2.1 -->
+		<!-- <version>3.2.1</version> -->
+	</dependency>
+	
+	<dependency>
+		<groupId>commons-lang</groupId>
+		<artifactId>commons-lang</artifactId>
+		<version>2.6</version><!-- updated to 2.6, Velocity 1.7 is using 2.4 -->
+		<!-- <version>2.4</version> -->
+	</dependency>
+	
+	<!-- For MD5 -->
+	<dependency>
+		<groupId>commons-codec</groupId>
+		<artifactId>commons-codec</artifactId>
+		<version>1.10</version>
+	</dependency>
+	
+	<!-- For file operations -->
+	<dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>2.5</version>
 	</dependency>
     
   </dependencies>
