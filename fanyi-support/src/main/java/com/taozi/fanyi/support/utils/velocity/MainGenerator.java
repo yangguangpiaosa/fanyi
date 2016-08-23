@@ -66,7 +66,7 @@ public class MainGenerator implements Generator {
 		
 		//put into velocity params, generate html
 		//String view = StaticUtil.class.getResource("").getPath()+"vm/log.vm";
-		String view = StaticUtil.class.getResource("/").getPath().replace("WEB-INF/classes", "") + "log/log.vm";
+		String view = StaticUtil.class.getResource("/").getPath().replace("WEB-INF/classes", "") + "tpl/index.vm";
 		FileRenderUtil.renderFile(view, basePath + pageName, dataMap);
 		
 	}

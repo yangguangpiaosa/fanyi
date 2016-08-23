@@ -41,7 +41,7 @@ public class NewsGenerator implements Generator {
 		
 		//put into velocity params, generate html
 		//String view = StaticUtil.class.getResource("").getPath()+"vm/news.vm";
-		String view = StaticUtil.class.getResource("/").getPath().replace("WEB-INF/classes", "") + "log/news.vm";
+		String view = StaticUtil.class.getResource("/").getPath().replace("WEB-INF/classes", "") + "tpl/news.vm";
 		FileRenderUtil.renderFile(view, basePath + pageName, dataMap);
 	}
 
