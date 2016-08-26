@@ -65,6 +65,13 @@
 	    <version>2.2.3</version>
 	</dependency>
 	
+	<!-- for file upload -->
+	<dependency>
+	    <groupId>com.jfinal</groupId>
+	    <artifactId>cos</artifactId>
+	    <version>26Dec2008</version>
+	</dependency>
+	
   </dependencies>
   
   <build>
