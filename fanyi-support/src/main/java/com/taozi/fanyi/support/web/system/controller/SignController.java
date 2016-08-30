@@ -1,13 +1,11 @@
 package com.taozi.fanyi.support.web.system.controller;
 
-import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpSession;
 
 import com.jfinal.core.Controller;
 import com.jfinal.log.Log;
-import com.jfinal.plugin.activerecord.Db;
-import com.jfinal.plugin.activerecord.Record;
 import com.taozi.fanyi.model.models.User;
 import com.taozi.fanyi.support.web.comn.Constants;
 
@@ -36,7 +34,8 @@ public class SignController extends Controller {
 	
 	public void signOut() {
 		removeSessionAttr(Constants.SESSION_USER);
-		redirect("index.html");
+		removeSessionAttr(Constants.SESSION_AUTH);
+		redirect("/");
 	}
 	
 	private void initSession(User user) {
@@ -45,8 +44,8 @@ public class SignController extends Controller {
 		session.setMaxInactiveInterval(Constants.SESSION_TIME_OUT);
 		
 		//get user authority
-		List<Record> objs = Db.find("select *, 'aaa' as ccc from user where email=?", "admin@admin.com");
-		System.out.println(objs.get(0).getStr("ccc"));
+		Set<String> auths = user.getAuth();
+		setSessionAttr(Constants.SESSION_AUTH, auths);
 	}
 	
 }

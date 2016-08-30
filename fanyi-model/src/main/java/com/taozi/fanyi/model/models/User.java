@@ -1,5 +1,9 @@
 package com.taozi.fanyi.model.models;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import com.jfinal.plugin.activerecord.Db;
 import com.taozi.fanyi.model.models.base.BaseUser;
 import com.taozi.fanyi.utils.encrypt.Encryptor;
@@ -17,6 +21,15 @@ public class User extends BaseUser<User> {
 	
 	public User getSignInUser() {
 		return User.dao.findFirst("select * from user where email = ? and user_pass = ?", getEmail(), Encryptor.base64AfterMd5(getUserPass()));
+	}
+	
+	public Set<String> getAuth() {
+		Set<String> result = new HashSet<String> ();
+		List<Authority> auths = Authority.dao.find("select * from authority where id in (select auth_id from authentication where role_id in (select role_id from mask where user_id=?))", getId());
+		for(Authority auth : auths) {
+			result.add(auth.getActionKey());
+		}
+		return result;
 	}
 	
 }
