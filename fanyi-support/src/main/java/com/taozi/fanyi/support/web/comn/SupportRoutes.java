@@ -5,6 +5,7 @@ import com.taozi.fanyi.support.web.comn.controller.FileController;
 import com.taozi.fanyi.support.web.comn.controller.PicController;
 import com.taozi.fanyi.support.web.comn.controller.UploadController;
 import com.taozi.fanyi.support.web.syslog.controller.SysLogController;
+import com.taozi.fanyi.support.web.system.controller.IndexController;
 import com.taozi.fanyi.support.web.system.controller.SignController;
 import com.taozi.fanyi.support.web.test.controller.TestController;
 
@@ -12,6 +13,7 @@ public class SupportRoutes extends Routes {
 
 	@Override
 	public void config() {
+		add("/", IndexController.class);
 		add("/upload", UploadController.class);
 		add("/file", FileController.class);
 		add("/pic", PicController.class);

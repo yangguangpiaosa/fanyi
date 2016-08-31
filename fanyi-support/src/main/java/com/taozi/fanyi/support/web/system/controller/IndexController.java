@@ -1,4 +1,4 @@
-package com.taozi.fanyi.www.controller;
+package com.taozi.fanyi.support.web.system.controller;
 
 import com.jfinal.core.Controller;
 import com.jfinal.log.Log;
