@@ -11,6 +11,7 @@ import com.jfinal.config.JFinalConfig;
 import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.core.Const;
+import com.jfinal.ext.handler.ContextPathHandler;
 import com.jfinal.kit.PropKit;
 import com.jfinal.log.Log;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
@@ -20,6 +21,7 @@ import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.plugin.druid.DruidStatViewHandler;
 import com.jfinal.plugin.druid.IDruidStatViewAuth;
 import com.taozi.fanyi.model.models._MappingKit;
+import com.taozi.fanyi.support.web.comn.handler.FileLoadHandler;
 import com.taozi.fanyi.support.web.comn.handler.StaticHandler;
 import com.taozi.fanyi.support.web.comn.interceptor.GlobalInterceptor;
 import com.taozi.fanyi.support.web.comn.interceptor.LogInterceptor;
@@ -33,7 +35,7 @@ public class Config extends JFinalConfig {
 	public void configConstant(Constants me) {
 		PropKit.use("config.properties");
 		me.setDevMode(PropKit.getBoolean("devMode", false));
-		me.setMaxPostSize(1024);//Const.DEFAULT_MAX_POST_SIZE
+		me.setMaxPostSize(Const.DEFAULT_MAX_POST_SIZE);
 	}
 
 	@Override
@@ -80,7 +82,9 @@ public class Config extends JFinalConfig {
 
 	@Override
 	public void configHandler(Handlers me) {
+		me.add(new ContextPathHandler("CXT_PATH"));
 		me.add(new StaticHandler());
+		me.add(new FileLoadHandler());
 		//Druid Monitor
 		DruidStatViewHandler dvh = new DruidStatViewHandler("/druid", new IDruidStatViewAuth() {
 

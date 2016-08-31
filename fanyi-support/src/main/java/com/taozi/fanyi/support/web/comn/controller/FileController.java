@@ -10,7 +10,7 @@ public class FileController extends Controller {
 	protected static final String BATH_PATH = "C:\\_code";
 	
 	public void index() {
-		String fileId = getPara("fid");
+		String fileId = getPara(0);
 		if(StrKit.isBlank(fileId)) {
 			renderFile(new File(""));//some default file
 		}
