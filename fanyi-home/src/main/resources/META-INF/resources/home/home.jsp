@@ -90,7 +90,7 @@
 
 <div class="ui four column grid container">
 <div class="column">
-<div class="ui fluid blue button">button</div>
+<div class="ui fluid blue button" onclick="window.location.href='<%=request.getContextPath() %>/sign/signOut'">退出</div>
 </div>
 <div class="ui ordered steps" style="padding: 0px;">
   <div class="completed step">

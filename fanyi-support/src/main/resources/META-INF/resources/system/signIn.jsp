@@ -60,13 +60,13 @@
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
-            <input type="text" name="email" placeholder="E-mail address">
+            <input type="text" name="user.email" placeholder="E-mail address">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="user.userPass" placeholder="Password">
           </div>
         </div>
         <!-- <div id="signIn" class="ui fluid large teal submit button">Sign In</div> -->

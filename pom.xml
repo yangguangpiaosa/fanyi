@@ -35,7 +35,6 @@
   <modules>
   	<module>fanyi-utils</module>
     <module>fanyi-matrix</module>
-    <module>fanyi-log</module>
     <module>fanyi-support</module>
     <module>fanyi-model</module>
     <module>fanyi-www</module>
