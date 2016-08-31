@@ -1,4 +1,4 @@
-package com.taozi.fanyi.log.controller;
+package com.taozi.fanyi.support.web.syslog.controller;
 
 import com.jfinal.core.Controller;
 
