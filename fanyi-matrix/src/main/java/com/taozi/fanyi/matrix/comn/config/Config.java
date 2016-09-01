@@ -82,7 +82,7 @@ public class Config extends JFinalConfig {
 
 	@Override
 	public void configHandler(Handlers me) {
-		me.add(new ContextPathHandler("CXT_PATH"));
+		me.add(new ContextPathHandler("cxt_path"));
 		me.add(new StaticHandler());
 		me.add(new FileLoadHandler());
 		//Druid Monitor
