@@ -1,4 +1,4 @@
-package com.taozi.fanyi.home.controller;
+package com.taozi.fanyi.home.main.controller;
 
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
