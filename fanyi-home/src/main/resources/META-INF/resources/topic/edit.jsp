@@ -1,5 +1,6 @@
 <%@ page pageEncoding="UTF-8"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,52 +67,13 @@
 	</div>
 </div>
 
-<div class="ui four column doubling stackable grid container" style="margin-top:0px;">
-  <div class="column">
-  	<div class="ui two buttons">
-  		<div class="ui teal button">确定</div>
-  		<div class="ui button">取消</div>
-  	</div>
-    <p>a<a href="${cxt_path }/topic">Topic</a></p>
-  </div>
-  <div class="column">
-    <div class="ui fluid green button">button</div>
-    <p>b</p>
-  </div>
-  <div class="column">
-    <div class="ui fluid yellow button">button</div>
-    <p>c</p>
-  </div>
-  <div class="column">
-    <div class="ui fluid blue button">button</div>
-    <p>d</p>
-  </div>
-</div>
-
-<div class="ui four column grid container">
-<div class="column">
-<div class="ui fluid blue button" onclick="window.location.href='${cxt_path }/sign/signOut'">退出</div>
-</div>
-<div class="ui ordered steps" style="padding: 0px;">
-  <div class="completed step">
-    <div class="content">
-      <div class="title">Shipping</div>
-      <div class="description">Choose your shipping options</div>
-    </div>
-  </div>
-  <div class="completed step">
-    <div class="content">
-      <div class="title">Billing</div>
-      <div class="description">Enter billing information</div>
-    </div>
-  </div>
-  <div class="active step">
-    <div class="content">
-      <div class="title">Confirm Order</div>
-      <div class="description">Verify order details</div>
-    </div>
-  </div>
-</div>
+<div class="ui container" style="margin-top:0px;">
+	<form action="${cxt_path }/topic/editSave">
+		<input type="hidden" name="topic.id" value="${topic.id }">
+		<input type="text" name="topic.title" value="${topic.title }"><br/>
+		<input type="text" name="topic.content" value="${topic.content }"><br/>
+		<input type="submit" value="submit">
+	</form>
 </div>
 
 </body>
