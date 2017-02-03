@@ -12,15 +12,19 @@ public class FileController extends Controller {
 	public void index() {
 		String fileId = getPara(0);
 		if(StrKit.isBlank(fileId)) {
-			renderFile(new File(""));//some default file
+			renderFile(new File(this.getClass().getResource("/").getPath().replace("/WEB-INF/classes/", "")+"/img/logo.png"));//some default file
 		}
 		String file = BATH_PATH + File.separator + getFullName(fileId);
-		renderFile(new File(file));
+		File f = new File(file);
+		if(f.isFile())
+			renderFile(new File(file));
+		else
+			renderFile(new File(this.getClass().getResource("/").getPath().replace("/WEB-INF/classes/", "")+"/img/logo.png"));
 	}
 	
 	protected String getFullName(String fileId) {
 		System.out.println(fileId);
-		return "bak.png";
+		return "1";
 	}
 	
 }

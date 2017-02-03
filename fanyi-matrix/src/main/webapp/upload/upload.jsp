@@ -13,7 +13,7 @@
   
 </head>
 <body>
-<form action="<%=request.getContextPath() %>/upload/upd" enctype="multipart/form-data" method="post">
+<form action="${cxt_path }/upload/upd" enctype="multipart/form-data" method="post">
     <input type="file" name="file"/>
     <input type="submit"/>
 </form>
