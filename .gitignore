@@ -3,30 +3,23 @@
 *.iml
 
 /fanyi-utils/target
-/fanyi-utils/.idea
 /fanyi-utils/*.iml
 
 /fanyi-model/target
-/fanyi-model/.idea
 /fanyi-model/*.iml
 
 /fanyi-support/target
-/fanyi-support/.idea
 /fanyi-support/*.iml
 
 /fanyi-matrix/target
-/fanyi-matrix/.idea
 /fanyi-matrix/*.iml
 
 /fanyi-home/target
-/fanyi-home/.idea
 /fanyi-home/*.iml
 
 /fanyi-profile/target
-/fanyi-profile/.idea
 /fanyi-profile/*.iml
 
 /fanyi-profile/target
-/fanyi-profile/.idea
 /fanyi-profile/*.iml
 
